@@ -9,8 +9,7 @@ class Game
 {
   constructor()
   {
-    this.achievement = new Achievement();
-
+    this.achievement = new Achievement("Tutorial Complete");
   }
   init()
   {
@@ -22,6 +21,8 @@ class Game
 
   draw()
   {
+    var ctx = document.getElementById("mycanvas").getContext("2d");
+    ctx.clearRect(0,0,1800,1800);
     this.achievement.drawImage();
   }
 

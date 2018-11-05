@@ -1,15 +1,17 @@
 /**
  * @author brendanhorlick1997@gmail.com (Brendan Horlick)
- * date: 08/11/2017
+ * date: 31/10/2018
  */
 var index = 0;
 var imageX = 1100;
 var imageWidth = 164;
 var frameCount = 0;
+var opacity = 0;
 class Achievement
 {
-  constructor()
+  constructor(achievementText)
   {
+    this.textString = achievementText;
     this.img = new Image();   // Create new img element
     this.img.id = "person";
     this.loaded = false;
@@ -33,31 +35,41 @@ class Achievement
   drawImage() {
     var ctx = document.getElementById("mycanvas").getContext("2d");
     //var image = this.img;
-    frameCount = frameCount + 1;
-    ctx.clearRect(0,0,1600,1600);
     if (this.loaded === true)
     {
       // draw the image
 
       if(imageX > 600)
       {
-      ctx.drawImage(this.img,42,202,imageWidth,162,imageX,700,imageWidth,162);
-      imageX = imageX - 20;
+        ctx.drawImage(this.img,42,202,imageWidth,162,imageX,700,imageWidth,162);
+        imageX = imageX - 20;
       }
       else
       {
-      ctx.drawImage(this.img,42,26,imageWidth,162,imageX,700,imageWidth,162);
-      imageWidth = imageWidth + 5;
+        ctx.drawImage(this.img,42,26,imageWidth,162,imageX,700,imageWidth,162);
+        if(imageWidth < 700)
+          {
+            imageWidth = imageWidth + 10;
+          }
+      }
+      if (imageWidth > 699)
+      {
+        ctx.font = "40px Comic Sans MS";
+        var colorString = "rgba(255,255,255,"+opacity+")";
+        ctx.fillStyle = colorString;
+        ctx.textAlign = "center";
+        ctx.fillText(this.textString, imageX + 400, 700 + 100);
+        if(opacity < 1)
+        {
+          opacity += 0.01;
+        }
+
       }
 
       //ctx.drawImage(this.img, 200, 0, 89, 143, 0, 0, 500, 200);
       // context.drawImage(img,sx,sy,swidth,sheight,x,y,width,height)
     }
-    if(index > 500)
-    {
-      index = 0;
-    }
-    index = index + 1;
+
 
 
 }
