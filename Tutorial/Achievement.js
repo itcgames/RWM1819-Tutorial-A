@@ -61,7 +61,12 @@ class Achievement
         ctx.fillText(this.textString, imageX + 400, 700 + 100);
         if(opacity < 1)
         {
-          opacity += 0.01;
+          opacity += 0.015;
+        }
+        endCount = endCount + 1;
+        if(endCount > 100)
+        {
+          imageX = imageX - 20;
         }
 
       }

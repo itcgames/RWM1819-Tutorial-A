@@ -9,6 +9,8 @@ var frameCount = 0;
 var opacity = 0;
 var aniCount = 0;
 var aniIndex = 0;
+var endCount = 0;
+var done = false;
 class DiamondAchievement
 {
   constructor(achievementText)
@@ -35,48 +37,54 @@ class DiamondAchievement
    * Draws a second image half the time.
    */
   drawImage() {
-    aniCount = aniCount + 1;
-    if(aniCount > 4)
-    {
-      aniCount = 0;
-      aniIndex = aniIndex + 1;
-    }
-    if(aniIndex == 6)
-    {
-      aniIndex = 0;
-    }
-    var ctx = document.getElementById("mycanvas").getContext("2d");
-    //var image = this.img;
-    if (this.loaded === true)
-    {
-      // draw the image
 
-      if(imageX > 600)
+      aniCount = aniCount + 1;
+      if(aniCount > 4)
       {
-        ctx.drawImage(this.img,42 + (168*aniIndex),202,imageWidth,162,imageX,700,imageWidth,162);
-        imageX = imageX - 20;
+        aniCount = 0;
+        aniIndex = aniIndex + 1;
       }
-      else
+      if(aniIndex == 6)
       {
-        ctx.drawImage(this.img,42,537+(167*aniIndex),imageWidth,162,imageX,700,imageWidth,162);
-        if(imageWidth < 700)
-          {
-            imageWidth = imageWidth + 10;
-          }
+        aniIndex = 0;
       }
-      if (imageWidth > 699)
+      var ctx = document.getElementById("mycanvas").getContext("2d");
+      //var image = this.img;
+      if (this.loaded === true)
       {
-        ctx.font = "40px Comic Sans MS";
-        var colorString = "rgba(255,255,255,"+opacity+")";
-        ctx.fillStyle = colorString;
-        ctx.textAlign = "center";
-        ctx.fillText(this.textString, imageX + 400, 700 + 100);
-        if(opacity < 1)
+        // draw the image
+
+        if(imageX > 600)
         {
-          opacity += 0.01;
+          ctx.drawImage(this.img,42 + (168*aniIndex),202,imageWidth,162,imageX,700,imageWidth,162);
+          imageX = imageX - 20;
         }
+        else
+        {
+          ctx.drawImage(this.img,42,537+(167*aniIndex),imageWidth,162,imageX,700,imageWidth,162);
+          if(imageWidth < 700)
+            {
+              imageWidth = imageWidth + 10;
+            }
+        }
+        if (imageWidth > 699)
+        {
+          ctx.font = "40px Comic Sans MS";
+          var colorString = "rgba(255,255,255,"+opacity+")";
+          ctx.fillStyle = colorString;
+          ctx.textAlign = "center";
+          ctx.fillText(this.textString, imageX + 400, 700 + 100);
+          if(opacity < 1)
+          {
+            opacity += 0.01;
+          }
+          endCount = endCount + 1;
+          if(endCount > 100)
+          {
+            imageX = imageX - 20;
+          }
 
-      }
+        }
 
       //ctx.drawImage(this.img, 200, 0, 89, 143, 0, 0, 500, 200);
       // context.drawImage(img,sx,sy,swidth,sheight,x,y,width,height)
