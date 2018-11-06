@@ -45,10 +45,12 @@ class DiamondAchievement
         // draw the image
 
         if(this.imageX > 600) {
-          ctx.drawImage(this.img,42 + (168*this.aniIndex),202,this.imageWidth,162,this.imageX,700,this.imageWidth,162);
+          ctx.drawImage(this.img,42 + (168*this.aniIndex),202,this.imageWidth,
+          162,this.imageX,700,this.imageWidth,162);
           this.imageX = this.imageX - 20;
         } else {
-          ctx.drawImage(this.img,42,537+(167*this.aniIndex),this.imageWidth,162,this.imageX,700,this.imageWidth,162);
+          ctx.drawImage(this.img,42,537+(167*this.aniIndex),this.imageWidth,
+          162,this.imageX,700,this.imageWidth,162);
           if(this.imageWidth < 700) {
               this.imageWidth = this.imageWidth + 10;
             }

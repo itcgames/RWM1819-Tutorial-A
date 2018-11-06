@@ -26,11 +26,9 @@ class Achievement
   render(){}
   /**
    * Draws an image after it is loaded.
-   * Draws a second image half the time.
    */
   drawImage() {
     var ctx = document.getElementById("mycanvas").getContext("2d");
-    //var image = this.img;
     if (this.loaded === true) {
       // draw the image
 
