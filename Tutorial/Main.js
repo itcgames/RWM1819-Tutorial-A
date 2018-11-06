@@ -15,8 +15,7 @@
      timestep = 1000 / 60;
 
 
-function main()
-{
+function main() {
 	initCanvas();
   document.title = "Tutorial";
   game = new Game();
@@ -72,8 +71,7 @@ function panic() {
   * nodes such as forms, buttons, the canvas etc.
   */
 
- function initCanvas()
- {
+ function initCanvas() {
  	// Use the document object to create a new element canvas.
  	var canvas = document.createElement('canvas');
  	// Assign the canvas an id so we can reference it elsewhere.
