@@ -8,7 +8,7 @@ class DiamondAchievement
   constructor(achievementText) {
     this.textString = achievementText;
     this.img = new Image();   // Create new img element
-    this.img.id = "person";
+    this.img.id = "diamondAchievement";
     this.loaded = false;
     var that = this;
     this.index = 0;

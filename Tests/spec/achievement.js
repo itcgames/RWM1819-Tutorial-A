@@ -8,8 +8,8 @@ describe('achievement()', function () {
 
   });
 
-  it('does something', function () {
-    expect(true).to.equal(false);
+  it('does something', function (constructor) {
+    expect(imageX).to.equal(1100);
   });
 
   it('does something else', function () {
