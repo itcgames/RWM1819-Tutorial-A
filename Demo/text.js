@@ -6,13 +6,14 @@ class Text
 {
   constructor(text, textX, textY) {
     this.textString = text;
+    this.textLength = this.textString.length;
     this.img = new Image();   // Create new img element
-    this.img.id = "person";
+    this.img.id = "speachBubble";
     this.loaded = false;
     var that = this;
     var ctx = document.getElementById("mycanvas").getContext("2d");
-    this.imageX = textX;
-    this.imageY = textY;
+    this.textX = textX;
+    this.textY = textY;
     this.i = 0;
     this.img.addEventListener('load', function() {
       console.log('Image loaded: ' + this.toString);
@@ -28,14 +29,16 @@ class Text
    */
   drawText(){
   var ctx = document.getElementById("mycanvas").getContext("2d");
-  ctx.font = "40px Comic Sans MS";
+  ctx.font = "30px Comic Sans MS";
   ctx.fillStyle = "#ffffff";
-  console.log(this.imageX);
-  ctx.fillText("Amazing", 100, this.imageY);
+  ctx.textAlign = "left";
+  var length = this.textString.length;
+  console.log(length);
+  ctx.fillText(this.textString, this.textX, this.textY);
   ctx.globalCompositeOperation = "source-in";
-  ctx.fillStyle = "#ff0000";
-  ctx.fillRect(this.imageX, this.imageY - 40, this.i, 400);
-  this.i++;
+  ctx.fillStyle = "#000000";
+  ctx.fillRect(this.textX, this.textY - 40, this.i, 400);
+  this.i = this.i + 2;
   }
   drawBackground(){
     var ctx = document.getElementById("mycanvas").getContext("2d");
@@ -43,6 +46,6 @@ class Text
     ctx.globalCompositeOperation = "destination-over";
     //console.log(ctx.globalCompositeOperation);
     // context.drawImage(img,sx,sy,swidth,sheight,x,y,width,height)
-    ctx.drawImage(this.img,this.imageX - 100,this.imageY - 100);
+    ctx.drawImage(this.img,this.textX - (40 + this.textLength),this.textY - (60 + this.textLength * 1.1),70 + (this.textLength * 17),150 + (this.textLength * 1.1));
   }
 }

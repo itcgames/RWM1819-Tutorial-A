@@ -8,7 +8,7 @@ var gameNs = {};
 class Game {
   constructor() {
     this.achievement = new Achievement("Tutorial Complete");
-    this.text = new Text("Text",100,100);
+    this.text = new Text("Hello",100,100);
     this.diamondAchievement = new DiamondAchievement("Diamond Got");
   }
   init() {
@@ -22,7 +22,8 @@ class Game {
     ctx.clearRect(0,0,1800,1800);
     this.text.drawText();
     this.text.drawBackground();
+    ctx.globalCompositeOperation = "source-over";
+    this.diamondAchievement.drawImage();
     //this.achievement.drawImage();
-    //this.diamondAchievement.drawImage();
   }
 }
