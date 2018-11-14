@@ -2,7 +2,7 @@
  * @author brendanhorlick1997@gmail.com (Brendan Horlick)
  * date: 31/10/2018
  */
-class Text
+class tutorialText
 {
   constructor(text, textX, textY) {
     this.textString = text;
