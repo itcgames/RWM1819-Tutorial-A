@@ -46,6 +46,10 @@ class Text
     ctx.globalCompositeOperation = "destination-over";
     //console.log(ctx.globalCompositeOperation);
     // context.drawImage(img,sx,sy,swidth,sheight,x,y,width,height)
-    ctx.drawImage(this.img,this.textX - (40 + this.textLength),this.textY - (60 + this.textLength * 1.1),70 + (this.textLength * 17),150 + (this.textLength * 1.1));
+    ctx.drawImage(this.img,this.textX - (40 + this.textLength)
+    ,this.textY - (60 + this.textLength * 1.1),70 + (this.textLength * 17)
+    ,150 + (this.textLength * 1.1));
+
+    ctx.globalCompositeOperation = "source-over";
   }
 }

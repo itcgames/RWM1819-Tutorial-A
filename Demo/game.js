@@ -22,7 +22,6 @@ class Game {
     ctx.clearRect(0,0,1800,1800);
     this.text.drawText();
     this.text.drawBackground();
-    ctx.globalCompositeOperation = "source-over";
     this.diamondAchievement.drawImage();
     //this.achievement.drawImage();
   }
