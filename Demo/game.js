@@ -8,8 +8,9 @@ var gameNs = {};
 class Game {
   constructor() {
     this.achievement = new Achievement("Tutorial Complete");
-    this.tutorialText = new tutorialText("Hello",100,100);
+    this.tutorialText = new tutorialText("Helloooooooooooooooooooooooo",100,100);
     this.diamondAchievement = new DiamondAchievement("Diamond Got");
+    this.arrow = new Arrow(500,500,"right");
   }
   init() {
   }
@@ -23,6 +24,7 @@ class Game {
     this.tutorialText.drawText();
     this.tutorialText.drawBackground();
     this.diamondAchievement.drawImage();
+    this.arrow.drawImage();
     //this.achievement.drawImage();
   }
 }
