@@ -15,6 +15,7 @@ class Game {
     this.arrow3 = new Arrow(1000,400,"left");
     this.arrow4 = new Arrow(1000,400,"up");
     this.highlight = new Highlight(300,400,400,300);
+    this.prompt = new Prompt(750,50,"leftClick");
   }
   init() {
   }
@@ -25,14 +26,15 @@ class Game {
     ctx.save();
     //ctx.globalCompositeOperation = "source-over";
     ctx.clearRect(0,0,1800,1800);
-    this.tutorialText.drawText();
-    this.tutorialText.drawBackground();
-    this.diamondAchievement.drawImage();
-    this.arrow.drawImage();
-    this.arrow2.drawImage();
-    this.arrow3.drawImage();
-    this.arrow4.drawImage();
-    this.highlight.drawImage();
+      this.tutorialText.drawText();
+      this.tutorialText.drawBackground();
+      this.diamondAchievement.drawImage();
+      this.arrow.drawImage();
+      this.arrow2.drawImage();
+      this.arrow3.drawImage();
+      this.arrow4.drawImage();
+      this.highlight.drawImage();
+      this.prompt.drawImage();
     //this.achievement.drawImage();
   }
 }
