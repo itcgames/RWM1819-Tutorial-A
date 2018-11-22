@@ -22,6 +22,11 @@ class Prompt
     this.prompt = prompt;
     this.imgCount = 0;
     this.imgIn = true;
+
+    // Change these values to alter image movement
+    this.maxImgMove = 30;
+    this.imgMoveSpeed = 1;
+
     this.img.addEventListener('load', function() {
       console.log('Image loaded: ' + this.toString);
       that.loaded = true;
@@ -54,18 +59,17 @@ class Prompt
    * Draws an image after it is loaded.
    */
   drawImage() {
-    console.log(drawBool);
-    if(this.imgCount > 30){
+    if(this.imgCount > this.maxImgMove){
       this.imgIn = true;
     }
     if(this.imgCount <= 0){
       this.imgIn = false;
     }
     if(this.imgIn == false){
-      this.imgCount = this.imgCount + 1;
+      this.imgCount = this.imgCount + this.imgMoveSpeed;
     }
     if(this.imgIn == true){
-      this.imgCount = this.imgCount - 1;
+      this.imgCount = this.imgCount - this.imgMoveSpeed;
     }
     var ctx = document.getElementById("mycanvas").getContext("2d");
     if(this.prompt == "leftClick"){

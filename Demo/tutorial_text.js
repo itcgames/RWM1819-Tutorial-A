@@ -33,7 +33,6 @@ class tutorialText
   ctx.fillStyle = "#ffffff";
   ctx.textAlign = "left";
   var length = this.textString.length;
-  console.log(length);
   ctx.fillText(this.textString, this.textX, this.textY);
   ctx.globalCompositeOperation = "source-in";
   ctx.fillStyle = "#000000";
