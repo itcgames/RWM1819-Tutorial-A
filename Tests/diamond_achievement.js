@@ -8,12 +8,12 @@ class DiamondAchievement
   constructor(achievementText) {
     this.textString = achievementText;
     this.img = new Image();   // Create new img element
-    this.img.id = "person";
+    this.img.id = "diamondAchievement";
     this.loaded = false;
     var that = this;
     this.index = 0;
-    this.imageX = 1100;
-    this.imageWidth = 164;
+    this.dAchievementX = 1100;
+    this.dAchievementWidth = 164;
     this.opacity = 0;
     this.aniCount = 0;
     this.aniIndex = 0;
@@ -44,29 +44,29 @@ class DiamondAchievement
       if (this.loaded === true) {
         // draw the image
 
-        if(this.imageX > 600) {
-          ctx.drawImage(this.img,42 + (168*this.aniIndex),202,this.imageWidth,
-          162,this.imageX,700,this.imageWidth,162);
-          this.imageX = this.imageX - 20;
+        if(this.dAchievementX > 600) {
+          ctx.drawImage(this.img,42 + (168*this.aniIndex),202,this.dAchievementWidth,
+          162,this.dAchievementX,700,this.dAchievementWidth,162);
+          this.dAchievementX = this.dAchievementX - 20;
         } else {
-          ctx.drawImage(this.img,42,537+(167*this.aniIndex),this.imageWidth,
-          162,this.imageX,700,this.imageWidth,162);
-          if(this.imageWidth < 700) {
-              this.imageWidth = this.imageWidth + 10;
+          ctx.drawImage(this.img,42,537+(167*this.aniIndex),this.dAchievementWidth,
+          162,this.dAchievementX,700,this.dAchievementWidth,162);
+          if(this.dAchievementWidth < 700) {
+              this.dAchievementWidth = this.dAchievementWidth + 10;
             }
         }
-        if (this.imageWidth > 699) {
+        if (this.dAchievementWidth > 699) {
           ctx.font = "40px Comic Sans MS";
           this.colorString = "rgba(255,255,255,"+this.opacity+")";
           ctx.fillStyle = this.colorString;
           ctx.textAlign = "center";
-          ctx.fillText(this.textString, this.imageX + 400, 700 + 100);
+          ctx.fillText(this.textString, this.dAchievementX + 400, 700 + 100);
           if(this.opacity < 1) {
             this.opacity += 0.01;
           }
           this.endCount = this.endCount + 1;
           if(this.endCount > 100) {
-            this.imageX = this.imageX - 20;
+            this.dAchievementX = this.dAchievementX - 20;
           }
 
         }

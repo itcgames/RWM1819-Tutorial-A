@@ -1,6 +1,6 @@
 /* global achievement, describe, it, expect, should */
 
-describe('achievement()', function () {
+describe('arrow()', function () {
   'use strict';
 
   it('exists', function () {
