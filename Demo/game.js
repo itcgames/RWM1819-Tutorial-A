@@ -15,7 +15,7 @@ class Game {
     this.arrow3 = new Arrow(1000,400,"left");
     this.arrow4 = new Arrow(1000,400,"up");
     this.highlight = new Highlight(300,400,400,300);
-    this.prompt = new Prompt(750,50,"leftClick");
+    this.prompt = new Prompt(750,50,"rightClick");
   }
   init() {
   }

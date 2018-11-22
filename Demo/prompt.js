@@ -7,11 +7,12 @@ class Prompt
 {
   constructor(x,y,prompt) {
     this.img = new Image();   // Create new img element
-    this.img.id = "prompt";
+    this.img.id = "mouseClick";
     this.img2 = new Image();   // Create new img element
     this.img2.id = "promptArrow";
+    this.img3 = new Image();   // Create new img element
+    this.img3.id = "blankMouse";
     this.loaded = false;
-    this.loaded2 = false;
     var that = this;
     this.imageX = x;
     this.imageY = y;
@@ -25,7 +26,7 @@ class Prompt
 
     // Change these values to alter image movement
     this.maxImgMove = 30;
-    this.imgMoveSpeed = 1;
+    this.imgMoveSpeed = 2;
 
     this.img.addEventListener('load', function() {
       console.log('Image loaded: ' + this.toString);
@@ -40,7 +41,6 @@ class Prompt
     }
     this.img2.addEventListener('load', function() {
     console.log('Image loaded: ' + this.toString);
-    that.loaded2 = true;
     }, false);
     if(this.prompt == "leftClick"){
       this.img2.src = 'clickArrow.png'; // Set source path
@@ -48,6 +48,14 @@ class Prompt
     if(this.prompt == "rightClick"){
       this.img2.src = 'rightClickArrow.png'; // Set source path
     }
+    this.img3.addEventListener('load', function() {
+    console.log('Image loaded: ' + this.toString);
+    }, false);
+    if(this.prompt == "leftClick"){
+    this.img3.src = 'blankMouse.png';
+  }else if (this.prompt == "rightClick") {
+    this.img3.src = 'blankMouse2.png';
+  }
   }
 
   render(){}
@@ -59,6 +67,7 @@ class Prompt
    * Draws an image after it is loaded.
    */
   drawImage() {
+
     if(this.imgCount > this.maxImgMove){
       this.imgIn = true;
     }
@@ -80,12 +89,17 @@ class Prompt
     }
     if (this.loaded === true && drawBool === true) {
         //ctx.drawImage(this.img,this.imageX -224,this.imageY -82);
+        if(this.imgIn == false){
       ctx.drawImage(this.img,this.imageX,this.imageY);
+      }
+        else if(this.imgIn == true){
+          ctx.drawImage(this.img3,this.imageX,this.imageY);
+        }
       if(this.prompt == "leftClick"){
-        ctx.drawImage(this.img2,this.imageX - this.arrowX - this.imgCount, this.imageY + this.arrowY)
+        ctx.drawImage(this.img2,this.imageX - this.arrowX - this.imgCount, this.imageY + this.arrowY);
       }
       if(this.prompt == "rightClick"){
-        ctx.drawImage(this.img2,this.imageX + this.arrowX - 15 + this.imgCount, this.imageY + this.arrowY)
+        ctx.drawImage(this.img2,this.imageX + this.arrowX - 15 + this.imgCount, this.imageY + this.arrowY);
       }
 
 
