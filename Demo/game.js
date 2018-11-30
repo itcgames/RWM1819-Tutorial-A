@@ -24,7 +24,6 @@ class Game {
   draw() {
     var ctx = document.getElementById("mycanvas").getContext("2d");
     ctx.save();
-    //ctx.globalCompositeOperation = "source-over";
     ctx.clearRect(0,0,1800,1800);
       this.tutorialText.drawText();
       this.tutorialText.drawBackground();

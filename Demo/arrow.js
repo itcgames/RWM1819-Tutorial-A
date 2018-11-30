@@ -26,7 +26,7 @@ class Arrow
       that.loaded = true;
 
     }, false);
-    this.img.src = 'arrow.png'; // Set source path
+    this.img.src = 'RWM1819-Tutorial-A/Demo/arrow.png'; // Set source path
   }
 
   render(){}

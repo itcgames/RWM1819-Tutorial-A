@@ -20,7 +20,7 @@ class tutorialText
       that.loaded = true;
 
     }, false);
-    this.img.src = 'speachbubble.png'; // Set source path
+    this.img.src = 'RWM1819-Tutorial-A/Demo/speachbubble.png'; // Set source path
   }
 
   render(){}
@@ -30,14 +30,14 @@ class tutorialText
   drawText(){
   var ctx = document.getElementById("mycanvas").getContext("2d");
   ctx.font = "30px Comic Sans MS";
-  ctx.fillStyle = "#ffffff";
+  ctx.fillStyle = "#000000";
   ctx.textAlign = "left";
   var length = this.textString.length;
   ctx.fillText(this.textString, this.textX, this.textY);
-  ctx.globalCompositeOperation = "source-in";
-  ctx.fillStyle = "#000000";
-  ctx.fillRect(this.textX, this.textY - 40, this.i, 400);
-  this.i = this.i + 2;
+  //ctx.globalCompositeOperation = "source-in";
+  //ctx.fillStyle = "#000000";
+  //ctx.fillRect(this.textX, this.textY - 40, this.i, 400);
+  //this.i = this.i + 2;
   }
   drawBackground(){
     var ctx = document.getElementById("mycanvas").getContext("2d");

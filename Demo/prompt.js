@@ -34,27 +34,27 @@ class Prompt
 
     }, false);
     if(this.prompt == "leftClick"){
-      this.img.src = 'leftclick.png'; // Set source path
+      this.img.src = 'RWM1819-Tutorial-A/Demo/leftclick.png'; // Set source path
     }
     if(this.prompt == "rightClick"){
-      this.img.src = 'rightclick.png'; // Set source path
+      this.img.src = 'RWM1819-Tutorial-A/Demo/rightclick.png'; // Set source path
     }
     this.img2.addEventListener('load', function() {
     console.log('Image loaded: ' + this.toString);
     }, false);
     if(this.prompt == "leftClick"){
-      this.img2.src = 'clickArrow.png'; // Set source path
+      this.img2.src = 'RWM1819-Tutorial-A/Demo/clickArrow.png'; // Set source path
     }
     if(this.prompt == "rightClick"){
-      this.img2.src = 'rightClickArrow.png'; // Set source path
+      this.img2.src = 'RWM1819-Tutorial-A/Demo/rightClickArrow.png'; // Set source path
     }
     this.img3.addEventListener('load', function() {
     console.log('Image loaded: ' + this.toString);
     }, false);
     if(this.prompt == "leftClick"){
-    this.img3.src = 'blankMouse.png';
+    this.img3.src = 'RWM1819-Tutorial-A/Demo/blankMouse.png';
   }else if (this.prompt == "rightClick") {
-    this.img3.src = 'blankMouse2.png';
+    this.img3.src = 'RWM1819-Tutorial-A/Demo/blankMouse2.png';
   }
   }
 
