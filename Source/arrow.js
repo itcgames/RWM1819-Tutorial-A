@@ -33,6 +33,12 @@ class Arrow
   /**
    * Draws an image after it is loaded.
    */
+   updatePositionX(x){
+     this.imageX = x;
+   }
+   updatePositionY(y){
+     this.imageY = y;
+   }
   drawImage() {
     if(this.imgCount > this.maxImgMove){
       this.imgIn = true;
