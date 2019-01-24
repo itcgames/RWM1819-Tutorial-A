@@ -16,32 +16,43 @@ class Arrow
     this.direction = direction;
     this.imgCount = 0;
     this.imgIn = true;
+
+    // Change these values to alter image movement
+    this.maxImgMove = 30;
+    this.imgMoveSpeed = 1;
+
     this.img.addEventListener('load', function() {
       console.log('Image loaded: ' + this.toString);
       that.loaded = true;
 
     }, false);
-    this.img.src = 'arrow.png'; // Set source path
+    this.img.src = '../assets/arrow.png'; // Set source path
   }
 
   render(){}
   /**
    * Draws an image after it is loaded.
    */
+   updatePositionX(x){
+     this.imageX = x;
+   }
+   updatePositionY(y){
+     this.imageY = y;
+   }
   drawImage() {
-    if(this.imgCount > 30){
+    if(this.imgCount > this.maxImgMove){
       this.imgIn = true;
     }
     if(this.imgCount <= 0){
       this.imgIn = false;
     }
     if(this.imgIn == false){
-      this.imgCount = this.imgCount + 1;
+      this.imgCount = this.imgCount + this.imgMoveSpeed;
     }
     if(this.imgIn == true){
-      this.imgCount = this.imgCount - 1;
+      this.imgCount = this.imgCount - this.imgMoveSpeed;
     }
-    var ctx = document.getElementById("mycanvas").getContext("2d");
+    var ctx = document.getElementById("canvas").getContext("2d");
     if (this.loaded === true) {
       // draw the image
       if(this.direction == "right"){

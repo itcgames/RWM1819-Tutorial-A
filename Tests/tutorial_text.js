@@ -11,7 +11,7 @@ class tutorialText
     this.img.id = "speachBubble";
     this.loaded = false;
     var that = this;
-    var ctx = document.getElementById("mycanvas").getContext("2d");
+    var ctx = document.getElementById("canvas").getContext("2d");
     this.textX = textX;
     this.textY = textY;
     this.i = 0;
@@ -20,7 +20,7 @@ class tutorialText
       that.loaded = true;
 
     }, false);
-    this.img.src = 'speachbubble.png'; // Set source path
+    this.img.src = '../assets/speachbubble.png'; // Set source path
   }
 
   render(){}
@@ -28,20 +28,19 @@ class tutorialText
    * Draws an image after it is loaded.
    */
   drawText(){
-  var ctx = document.getElementById("mycanvas").getContext("2d");
+  var ctx = document.getElementById("canvas").getContext("2d");
   ctx.font = "30px Comic Sans MS";
-  ctx.fillStyle = "#ffffff";
+  ctx.fillStyle = "#000000";
   ctx.textAlign = "left";
   var length = this.textString.length;
-  console.log(length);
   ctx.fillText(this.textString, this.textX, this.textY);
-  ctx.globalCompositeOperation = "source-in";
-  ctx.fillStyle = "#000000";
-  ctx.fillRect(this.textX, this.textY - 40, this.i, 400);
-  this.i = this.i + 2;
+  //ctx.globalCompositeOperation = "source-in";
+  //ctx.fillStyle = "#000000";
+  //ctx.fillRect(this.textX, this.textY - 40, this.i, 400);
+  //this.i = this.i + 2;
   }
   drawBackground(){
-    var ctx = document.getElementById("mycanvas").getContext("2d");
+    var ctx = document.getElementById("canvas").getContext("2d");
     //ctx.restore();
     ctx.globalCompositeOperation = "destination-over";
     //console.log(ctx.globalCompositeOperation);

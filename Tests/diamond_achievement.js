@@ -22,7 +22,7 @@ class DiamondAchievement
       console.log('Image loaded: ' + this.toString);
       that.loaded = true;
     }, false);
-    this.img.src = 'diamondsheet.png'; // Set source path
+    this.img.src = '../assets/diamondsheet.png'; // Set source path
   }
 
   render() {}
@@ -39,7 +39,7 @@ class DiamondAchievement
       if(this.aniIndex == 6) {
         this.aniIndex = 0;
       }
-      var ctx = document.getElementById("mycanvas").getContext("2d");
+      var ctx = document.getElementById("canvas").getContext("2d");
       //var image = this.img;
       if (this.loaded === true) {
         // draw the image

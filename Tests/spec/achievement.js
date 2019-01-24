@@ -1,19 +1,14 @@
-/* global achievement, describe, it, expect, should */
+var path = require('path');
+var expect = require('chai').expect;
 
-describe('achievement()', function () {
+var achievement = require(path.join(__dirname, '..', './achievement.js'));
+
+describe('achievement constructor exists', function () {
   'use strict';
 
   it('exists', function () {
     expect(constructor).to.be.a('function');
 
-  });
-
-//  it('does something', function (constructor) {
-//    expect(imageX).to.equal(1100);
-//  });
-
-  it('does something else', function () {
-    expect(true).to.equal(true);
   });
 
   // Add more assertions here

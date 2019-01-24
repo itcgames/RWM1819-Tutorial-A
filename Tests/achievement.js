@@ -20,7 +20,7 @@ class Achievement
       that.loaded = true;
 
     }, false);
-    this.img.src = 'achievement.png'; // Set source path
+    this.img.src = '../assets/achievement.png'; // Set source path
   }
 
   render(){}
@@ -28,7 +28,7 @@ class Achievement
    * Draws an image after it is loaded.
    */
   drawImage() {
-    var ctx = document.getElementById("mycanvas").getContext("2d");
+    var ctx = document.getElementById("canvas").getContext("2d");
     if (this.loaded === true) {
       // draw the image
 
