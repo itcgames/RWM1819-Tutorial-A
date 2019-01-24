@@ -90,7 +90,7 @@ class KeyPrompt
     if(this.imgIn == true){
       this.imgCount = this.imgCount - this.imgMoveSpeed;
     }
-    var ctx = document.getElementById("mycanvas").getContext("2d");
+    var ctx = document.getElementById("canvas").getContext("2d");
     var that = this;
     window.addEventListener("keydown", this.getKey.bind(null,that));
     if (this.loaded === true && this.drawBool === true) {

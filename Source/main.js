@@ -75,7 +75,7 @@ function panic() {
  	// Use the document object to create a new element canvas.
  	var canvas = document.createElement('canvas');
  	// Assign the canvas an id so we can reference it elsewhere.
- 	canvas.id = 'mycanvas';
+ 	canvas.id = 'canvas';
  	canvas.width = window.innerWidth;
  	canvas.height = window.innerHeight;
  	// We want this to be a 2D canvas.

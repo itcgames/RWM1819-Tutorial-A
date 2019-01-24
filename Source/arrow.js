@@ -46,7 +46,7 @@ class Arrow
     if(this.imgIn == true){
       this.imgCount = this.imgCount - this.imgMoveSpeed;
     }
-    var ctx = document.getElementById("mycanvas").getContext("2d");
+    var ctx = document.getElementById("canvas").getContext("2d");
     if (this.loaded === true) {
       // draw the image
       if(this.direction == "right"){
