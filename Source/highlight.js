@@ -35,10 +35,10 @@ class Highlight
    * Draws an image after it is loaded.
    */
    updatePositionX(x){
-     this.imageX = x;
+     this.imageStartX = x;
    }
    updatePositionY(y){
-     this.imageY = y;
+     this.imageStartY = y;
    }
   drawImage() {
     if(this.imgCount > this.maxImgMove){

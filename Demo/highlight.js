@@ -34,6 +34,12 @@ class Highlight
   /**
    * Draws an image after it is loaded.
    */
+   updatePositionX(x){
+     this.imageStartX = x;
+   }
+   updatePositionY(y){
+     this.imageStartY = y;
+   }
   drawImage() {
     if(this.imgCount > this.maxImgMove){
       this.imgIn = true;
@@ -47,7 +53,7 @@ class Highlight
     if(this.imgIn == true){
       this.imgCount = this.imgCount - this.imgMoveSpeed;
     }
-    var ctx = document.getElementById("mycanvas").getContext("2d");
+    var ctx = document.getElementById("canvas").getContext("2d");
     if (this.loaded === true) {
       // draw the image
         //ctx.drawImage(this.img,this.imageX -224,this.imageY -82);

@@ -11,7 +11,7 @@ class tutorialText
     this.img.id = "speachBubble";
     this.loaded = false;
     var that = this;
-    var ctx = document.getElementById("mycanvas").getContext("2d");
+    var ctx = document.getElementById("canvas").getContext("2d");
     this.textX = textX;
     this.textY = textY;
     this.i = 0;
@@ -28,7 +28,7 @@ class tutorialText
    * Draws an image after it is loaded.
    */
   drawText(){
-  var ctx = document.getElementById("mycanvas").getContext("2d");
+  var ctx = document.getElementById("canvas").getContext("2d");
   ctx.font = "30px Comic Sans MS";
   ctx.fillStyle = "#000000";
   ctx.textAlign = "left";
@@ -40,7 +40,7 @@ class tutorialText
   //this.i = this.i + 2;
   }
   drawBackground(){
-    var ctx = document.getElementById("mycanvas").getContext("2d");
+    var ctx = document.getElementById("canvas").getContext("2d");
     //ctx.restore();
     ctx.globalCompositeOperation = "destination-over";
     //console.log(ctx.globalCompositeOperation);
