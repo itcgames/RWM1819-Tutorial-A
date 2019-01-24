@@ -20,7 +20,7 @@ class tutorialText
       that.loaded = true;
 
     }, false);
-    this.img.src = 'RWM1819-Tutorial-A/Demo/speachbubble.png'; // Set source path
+    this.img.src = '../assets/speachbubble.png'; // Set source path
   }
 
   render(){}

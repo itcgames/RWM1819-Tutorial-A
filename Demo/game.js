@@ -10,6 +10,11 @@ class Game {
     this.achievement = new Achievement("Tutorial Complete");
     this.tutorialText = new tutorialText("Helloooooooooooooooooooooooo",100,100);
     this.diamondAchievement = new DiamondAchievement("Diamond Got");
+    this.keyprompt = new KeyPrompt(100,600,"Space");
+    this.keyprompt2 = new KeyPrompt(300,567,"ArrowUp");
+    this.keyprompt3 = new KeyPrompt(300,600,"ArrowDown");
+    this.keyprompt4 = new KeyPrompt(267,600,"ArrowLeft");
+    this.keyprompt5 = new KeyPrompt(333,600,"ArrowRight");
     this.arrow = new Arrow(1000,400,"right");
     this.arrow2 = new Arrow(1000,400,"down");
     this.arrow3 = new Arrow(1000,400,"left");
@@ -34,6 +39,11 @@ class Game {
       this.arrow4.drawImage();
       this.highlight.drawImage();
       this.prompt.drawImage();
+      this.keyprompt.drawImage();
+      this.keyprompt2.drawImage();
+      this.keyprompt3.drawImage();
+      this.keyprompt4.drawImage();
+      this.keyprompt5.drawImage();
     //this.achievement.drawImage();
   }
 }

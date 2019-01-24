@@ -27,7 +27,7 @@ class Highlight
       that.loaded = true;
 
     }, false);
-    this.img.src = 'RWM1819-Tutorial-A/Demo/highlight.png'; // Set source path
+    this.img.src = '../assets/highlight.png'; // Set source path
   }
 
   render(){}

@@ -20,7 +20,7 @@ class Achievement
       that.loaded = true;
 
     }, false);
-    this.img.src = 'RWM1819-Tutorial-A/Demo/achievement.png'; // Set source path
+    this.img.src = '../assets/achievement.png'; // Set source path
   }
 
   render(){}
