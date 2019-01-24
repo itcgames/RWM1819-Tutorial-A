@@ -63,7 +63,6 @@ class KeyPrompt
   }
   getKey(that,e){
     that.keyPressed = e.key;
-    console.log(e.key)
     if(that.keyPressed == that.prompt)
     {
     that.setDrawFalse();
