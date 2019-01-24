@@ -52,7 +52,7 @@ class KeyPrompt
       that.loaded = true;
 
     }, false);
-    this.img.src = '../assets/keys.jpg'; // Set source path
+    this.img.src = '../assets/keys.png'; // Set source path
 
 
   }
