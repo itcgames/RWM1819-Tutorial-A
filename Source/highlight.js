@@ -16,13 +16,18 @@ class Highlight
     this.opacity = 0;
     this.endCount = 0;
     this.imgCount = 0;
+
+    // Change these values to alter image movement
+    this.maxImgMove = 50;
+    this.imgMoveSpeed = 2;
+
     this.imgIn = true;
     this.img.addEventListener('load', function() {
       console.log('Image loaded: ' + this.toString);
       that.loaded = true;
 
     }, false);
-    this.img.src = 'highlight.png'; // Set source path
+    this.img.src = '../assets/highlight.png'; // Set source path
   }
 
   render(){}
@@ -30,17 +35,17 @@ class Highlight
    * Draws an image after it is loaded.
    */
   drawImage() {
-    if(this.imgCount > 50){
+    if(this.imgCount > this.maxImgMove){
       this.imgIn = true;
     }
     if(this.imgCount <= 0){
       this.imgIn = false;
     }
     if(this.imgIn == false){
-      this.imgCount = this.imgCount + 2;
+      this.imgCount = this.imgCount + this.imgMoveSpeed;
     }
     if(this.imgIn == true){
-      this.imgCount = this.imgCount - 2;
+      this.imgCount = this.imgCount - this.imgMoveSpeed;
     }
     var ctx = document.getElementById("mycanvas").getContext("2d");
     if (this.loaded === true) {

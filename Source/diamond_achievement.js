@@ -22,7 +22,7 @@ class DiamondAchievement
       console.log('Image loaded: ' + this.toString);
       that.loaded = true;
     }, false);
-    this.img.src = 'diamondsheet.png'; // Set source path
+    this.img.src = '../assets/diamondsheet.png'; // Set source path
   }
 
   render() {}
